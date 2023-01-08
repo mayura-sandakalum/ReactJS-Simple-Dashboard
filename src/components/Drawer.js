@@ -1,8 +1,9 @@
 import React from 'react';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 
 import Logo from './svgs/Logo';
 import { HomeIcon, ContentIcon, AnalyticsIcon, LikesIcon, CommentsIcon, ShareIcon, LogoutIcon, DarkModeIcon } from './svgs/DrawerSvgs';
+import DarkModeSwitch from './DarkModeSwitch';
 
 const Drawer = () => {
   const logoTextSx = {
@@ -22,20 +23,26 @@ const Drawer = () => {
     width: '300px',
     height: '60px',
     left: '0px',
-  }
+  };
 
   const drawerButtonBoxSx = {
     position: 'absolute',
     left: '50px',
     display: 'flex',
     flexDirection: 'row',
-  }
+  };
 
   const drawerButtonTypoSx = {
     paddingLeft: "18px",
     fontSize: "20px",
     textTransform: "capitalize",
-  }
+  };
+
+  const switchSx = {
+    position: 'absolute',
+    left: '164px',
+    top: '6px'
+  };
 
   return (
     <Box>
@@ -91,12 +98,11 @@ const Drawer = () => {
         </Box>
       </Button>
 
-      <Button variant="text" sx={{ top: '620px', ...drawerButtonSx }} >
-        <Box sx={drawerButtonBoxSx} >
-          <DarkModeIcon width="30px" height="30px" />
-          <Typography color="#2A353D" {...drawerButtonTypoSx} > Dark Mode </Typography>
-        </Box>
-      </Button>
+      <Stack direction="row" sx={{ position: 'absolute', left: '50px', top: '635px' }} >
+        <DarkModeIcon width="30px" height="30px" />
+        <Typography color="#2A353D" {...drawerButtonTypoSx} > Dark Mode </Typography>
+        <DarkModeSwitch defaultChecked inputProps={{ "aria-label": "switch design" }} sx={{ ...switchSx, verticalAlign: 'center' }} />
+      </Stack>
 
 
     </Box>
