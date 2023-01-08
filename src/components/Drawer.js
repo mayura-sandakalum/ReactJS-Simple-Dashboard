@@ -4,6 +4,7 @@ import { Box, Button, Stack, Typography } from '@mui/material';
 import Logo from './svgs/Logo';
 import { HomeIcon, ContentIcon, AnalyticsIcon, LikesIcon, CommentsIcon, ShareIcon, LogoutIcon, DarkModeIcon } from './svgs/DrawerSvgs';
 import DarkModeSwitch from './DarkModeSwitch';
+import { HorizontalDividerSvg } from './svgs/DividerSvgs';
 
 const Drawer = () => {
   const logoTextSx = {
@@ -90,6 +91,8 @@ const Drawer = () => {
           <Typography color="#2A353D" {...drawerButtonTypoSx} > Share </Typography>
         </Box>
       </Button>
+
+      <HorizontalDividerSvg />
 
       <Button variant="text" sx={{ top: '560px', ...drawerButtonSx }} >
         <Box sx={drawerButtonBoxSx} >
