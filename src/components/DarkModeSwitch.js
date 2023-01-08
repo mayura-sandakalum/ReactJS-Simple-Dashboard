@@ -1,8 +1,7 @@
-import React from 'react'
-import styled from '@emotion/styled';
+import { styled } from "@mui/material/styles";
 import { Switch } from '@mui/material';
 
-const SwitchButton = styled(Switch)(({ theme }) => ({
+const DarkModeSwitch = styled(Switch)(({ theme }) => ({
   width: 28,
   height: 16,
   padding: 0,
@@ -43,4 +42,4 @@ const SwitchButton = styled(Switch)(({ theme }) => ({
   }
 }));
 
-export default SwitchButton
+export default DarkModeSwitch
